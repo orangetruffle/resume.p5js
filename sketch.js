@@ -9,7 +9,7 @@ function preload() {
   overlay = loadImage("./resumeOverlay.png");
 }
 function setup() {
-  createCanvas(2480, 3508);
+  createCanvas(2480/2, 3508/2);
   noFill();
   
 }
@@ -24,7 +24,7 @@ function draw() {
   
 push();
   beginShape()
-  translate(width/2.65, height/1.65);
+  translate(width/2.62, height/1.45);
   for(var i = 0; i <= 359; i++) {
     /**
      * rMin/Max provides the animation for the shape. 
@@ -32,11 +32,11 @@ push();
      * Collective sum of Min
      */
 
-    var r1Min = map(cos(frameCount/200), -1, 1, -10*2, 211*2);
-    var r1Max = map(sin(frameCount/180), -1, 1, 97 *2, -50*2);
+    var r1Min = map(cos(frameCount/200), -1, 1, -10, 211);
+    var r1Max = map(sin(frameCount/180), -1, 1, 97 , -50);
 
-    var r2Min = map(sin(frameCount/220), -1, 1, -20*2, 300*2);
-    var r2Max = map(cos(frameCount/220), -1, 1, 100*2.5, 300*2);
+    var r2Min = map(sin(frameCount/220), -1, 1, -20,300);
+    var r2Max = map(cos(frameCount/220), -1, 1, 100, 300);
 
     var r1 = map(sin(i*3), -1, 1, r1Min, r1Max);
     var r2 = map(sin(i*6), -1, 1, r2Min, r2Max);
@@ -56,5 +56,7 @@ pop();
     // capturer.stop();
     // capturer.save();
   // }
+  overlay.resize(width,height);
   image(overlay,0,0);
+  
 }
