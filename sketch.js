@@ -3,7 +3,7 @@
  * Designed and Developed by Elle Bassett for Generative Drawing.
  * ***************************************************************
  */
-let overlay
+let overlay;
 
 function preload() {
   overlay = loadImage("./resumeOverlay.png");
@@ -11,15 +11,9 @@ function preload() {
 function setup() {
   createCanvas(2480/2, 3508/2);
   noFill();
-  
 }
 
 function draw() {
-  
-  // if(frameCount === 1){
-    // capturer.start();
-  // }
-
   background("#D3C4E3");
   
 push();
@@ -50,12 +44,7 @@ push();
   }
   endShape();
 pop();
-  // if(frameCount < 21600) {
-    // capturer.capture(canvas);
-  // } else if(frameCount === 21600) {
-    // capturer.stop();
-    // capturer.save();
-  // }
+
   overlay.resize(width,height);
   image(overlay,0,0);
   
