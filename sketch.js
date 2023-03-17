@@ -14,10 +14,10 @@ function setup() {
 }
 
 function draw() {
-  background("#D3C4E3");
+  background("#F9E9EC");
 push();
   beginShape()
-  translate(width/2.6, height/1.7);
+  translate(width/1.5, height/1.4);
   for(var i = 0; i <= 359; i++) {
     /**
      * rMin/Max provides the animation for the shape. 
@@ -25,11 +25,11 @@ push();
      * Collective sum of Min
      */
 
-    var r1Min = map(cos(frameCount/200), -1, 1, -10, 200 * 2);
-    var r1Max = map(sin(frameCount/180), -1, 1, 97 , -190* 2);
+    var r1Min = map(cos(frameCount* 0.005), -1, 1, -10, 200 * 1.2);
+    var r1Max = map(sin(frameCount* 0.0055), -1, 1, 97 , -190* 1.4);
 
-    var r2Min = map(sin(frameCount/220), -1, 1, -80,250  * 2);
-    var r2Max = map(cos(frameCount/220), -1, 1, 100, -10 * 2);
+    var r2Min = map(sin(frameCount*0.0045), -1, 1, -80,250  * 1.4);
+    var r2Max = map(cos(frameCount*0.0045), -1, 1, 100, -10 * 1.4);
 
     var r1 = map(sin(i*3), -1, 1, r1Min, r1Max);
     var r2 = map(sin(i*6), -1, 1, r2Min, r2Max);
